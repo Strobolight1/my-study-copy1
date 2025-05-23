@@ -6,29 +6,66 @@
     <title>ネットワークスペシャリスト過去問リンク集</title>
     <style>
         body {
-            font-size: 200%; /* 元の2倍 */
-            line-height: 2;  /* 元の約1行分の空白 */
+            font-size: 220%; 
+            line-height: 1.2;  
         }
         ul {
             list-style-type: none;
             padding-left: 0;
         }
         li {
-            margin-bottom: 1em; /* 項目間の空白を設定 */
+            margin-bottom: 1em;
         }
         a {
-            text-decoration: underline; /* 常にアンダーラインを表示する */
+            text-decoration: underline; 
             color: #0056b3;
         }
         a:hover {
             text-decoration: underline;
         }
+
+        /* 追従型目次スタイル */
+        .toc {
+            position: fixed; /* 画面の特定の場所に固定する */
+            top: 50px;       /* 上からの距離を調整 */
+            left: 550px;     /* 左端からの距離を調整 */
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            margin-bottom: 20px;
+            z-index: 1000;   /* 他の要素より前面に表示する */
+        }
+        .toc ul {
+            padding-left: 15px;
+            margin: 0;
+        }
+        .toc ul li {
+            margin-bottom: 5px;
+        }
+        .toc ul li a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .toc ul li a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-<h2>
- 令和6年度
-</h2>
+    <nav class="toc">
+        <ul>
+            <li><a href="#r06">令和6年度</a></li>
+            <li><a href="#r05">令和5年度</a></li>
+            <li><a href="#r04">令和4年度</a></li>
+            <li><a href="#r03">令和3年度</a></li>
+            <li><a href="#h30">平成30年度</a></li>
+            <li><a href="#h29">平成29年度</a></li>
+        </ul>
+    </nav>
+
+    <h2 id="r06">令和6年度</h2>
 <ul>
  <li>
   <a href="./data_folder/../data_folder/r06_p1_q1_no1.html">
@@ -151,9 +188,8 @@
   </a>
  </li>
 </ul>
-<h2>
- 令和5年度
-</h2>
+    
+    <h2 id="r05">令和5年度</h2>
 <ul>
  <li>
   <a href="./data_folder/r05_p1_q1_no1.html">
@@ -251,9 +287,8 @@
   </a>
  </li>
 </ul>
-<h2>
- 令和4年度
-</h2>
+
+    <h2 id="r04">令和4年度</h2>
 <ul>
  <li>
   <a href="./data_folder/r04_p1_q1_no1.html">
@@ -346,9 +381,8 @@
   </a>
  </li>
 </ul>
-<h2>
- 令和3年度
-</h2>
+
+    <h2 id="r03">令和3年度</h2>
 <ul>
  <li>
   <a href="./data_folder/r03_p1_q1_no１.html">
@@ -446,9 +480,8 @@
   </a>
  </li>
 </ul>
-<h2>
- 平成30年度
-</h2>
+
+    <h2 id="h30">平成30年度</h2>
 <ul>
  <li>
   <a href="./data_folder/h30_p1_q1_no1.html">
@@ -541,9 +574,8 @@
   </a>
  </li>
 </ul>
-<h2>
- 平成29年度
-</h2>
+
+    <h2 id="h29">平成29年度</h2>
 <ul>
  <li>
   <a href="./data_folder/h29_p1_q1_no1.html">
@@ -651,5 +683,6 @@
   </a>
  </li>
 </ul>
+
 </body>
 </html>
