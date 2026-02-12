@@ -1,4 +1,4 @@
-param(
+﻿param(
   [Parameter(Mandatory=$false)]
   [string]$Dir = (Get-Location).Path
 )
