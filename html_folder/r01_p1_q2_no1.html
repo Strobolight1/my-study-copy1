@@ -165,6 +165,27 @@
 
 <p><meta charset="utf-8"><a href="https://web.archive.org/web/20250124063324/https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h31_2/2019r01a_nw_pm1_qs.pdf" target="_blank" rel="noreferrer noopener" title="https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h31_2/2019r01a_nw_pm1_qs.pdf">【出典：ネットワークスペシャリスト試験 令和元年度 秋期 午後1 問2（一部、加工あり）】</a></p>
 
+<p>Webシステムの構成変更に関する次の記述を読んで、設問1〜3に答えよ。<br/><br/>　A社は、中堅の菓子メーカであり、自社で製造する商品を、店舗とオンラインショップで販売している。オンラインショップの利用者は、Webブラウザを使ってWebシステムにアクセスする。A社のオンラインショップを構成する、現行のWebシステムを図1に示す。</p>
+
+<div class="wp-block-image is-style-vk-image-border"><figure class="aligncenter size-full"><a href="../images/pm1/r01_pm1_q2_no1.png"><img data-recalc-dims="1" fetchpriority="high" decoding="async" src="../images/pm1/r01_pm1_q2_no1.png" alt="" class="wp-image-4436"/></a></figure></div>
+
+<p>　A社では、Webシステムのアクセス数の増加に対応するために、Webサーバの増設と負荷分散装置（以下、LBという）の導入を決めた。また、昨今、Webアプリケーションプログラム（以下、WebAPという）の脆弱性を悪用したサイバー攻撃が報告されていることから、WAF（Web Application Firewall）サービスの導入を検討することになった。そのための事前調査から設計までを情報システム部のUさんが担当することになった。<br/><br/>[WAFサービス導入の検討]<br/>　Uさんは、SaaS事業者のT社が提供するWAFサービスを調査した。T社によるWAFサービスの説明は、次のとおりである。</p>
+
+<ul class="wp-block-list"><li>WAFサービスは、利用者のWebブラウザとWebシステム間のHTTPS通信を中継する。利用者のWebブラウザは、WAFサービスにアクセスするためのIPアドレス（以下、IP-w1という）宛てにHTTPリクエストを送信する。</li><li>WAFサービスは、HTTPS通信を復号してHTTPリクエストを検査する。そのために、A社は、現行と同じコモンネームのサーバ証明書と秘密鍵を、WAFサービスに提供する必要がある。</li><li>WAFサービスは、WebAPへのサイバー攻撃が疑われる通信を検知し、Webシステムへのアクセスを制御する。</li><li>WAFサービスは、アクセスを許可したHTTPリクエストの送信元IPアドレスを、HTTPヘッダのX-Forwardes-Forヘッダフィールド（以下、XFFヘッダという）に追加する。XFFヘッダの追加後に、HTTPリクエストの送信元IPアドレスを、HTTPレスポンスがWAFサービスに送られるようにするためのIPアドレス（以下、IP-w2という）に変更する。</li><li>WAFサービスは、HTTPリクエストを再度HTTPSで暗号化して、WebシステムにアクセスするためのIPアドレスである199.α.β.2宛てに転送する。</li><li>WAFサービスは、HTTPレスポンスを検査する。HTTPレスポンスに対する処理の説明は省略する。</li></ul>
+
+<p><br/>　Uさんは、Webブラウザから送信されるHTTPリクエストを、WAFサービス宛てに変える方法について、T社に確認した。T社からの回答は、次のとおりである。</p>
+
+<ul class="wp-block-list"><li>A社DNSサーバに、RDATAにIP-w1を設定したAレコードを登録する方式と、RDATAにT社WAFサービスのFQDNを設定したCNAMEレコードを登録する方式がある。</li><li>T社は、IP-w1を変更する場合があるので、<strong><span style="text-decoration: underline;">①CNAMEレコードを登録する方式を推奨している</span></strong>。</li></ul>
+
+<p><br/>　T社からの説明を踏まえて、Uさんが検討したA社DNSサーバのゾーンファイルを、図2に示す。</p>
+
+<div class="wp-block-image is-style-vk-image-border"><figure class="aligncenter size-full"><a href="../images/pm1/r01_pm1_q2_no2.png"><img data-recalc-dims="1" decoding="async" src="../images/pm1/r01_pm1_q2_no2.png" alt="" class="wp-image-4437"/></a></figure></div>
+
+<p><br/>　現行のWebAPでは、Webシステムへのアクセス時の送信元IPアドレスをアクセスログに記録している。Uさんは、送信元IPアドレスの代わりにXFFヘッダの情報を記録するように、WebAPの設定を変更することにした。<br/>　Uさんは、FWに設定しているWebシステムへのHTTPS通信に関するアクセス制御について、IP-w2を送信元とする通信だけを許可するように、設定を変更することにした。</p>
+
+<h2 class="is-style-vk-heading-double_black has-medium-font-size wp-block-heading">下線①について、A社にとっての利点を45字以内で述べよ。：<strong><button type="button" onclick="toggleAnswer(this)">解答を表示</button><span class="answer" style="display:none;"><span class="vk_highlighter" data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);">T社がIP-w1を変更しても、A社DNSサーバの変更作業が不要となる。</span></span></strong></h2>
+
+<p>　A社DNSサーバにおいて、「<em>RDATAにIP-w1を設定したAレコードを登録する方式</em>」の場合、T社がIP-w1を変更すると、A社DNSサーバのAレコードもそれに合わせて変更する必要があります。<br/>　一方、「<em>RDATAにT社WAFサービスのFQDNを設定したCNAMEレコードを登録する方式</em>」の場合、A社DNSサーバのIP-w1が直接記載されていないので、変更作業が不要になりそうです。<br/>　具体的にWebブラウザから送信されるHTTPリクエストを考えると、最初にWebブラウザから「shop.asha.com」の名前解決を行うDNSクエリがA社DNSサーバに送信されます。<br/>　A社DNSサーバでは、CNAMEレコードに従い、ドメイン名「waf-asha.tsha.net」をWebブラウザに応答します。<br/>　そして、Webブラウザはドメイン名「waf-asha.tsha.net」を管理するDNSサーバ（T社）にDNSクエリを送信します。<br/>　IP-w1が変更されても、T社DNSサーバで適切に変更されているため、A社DNSサーバの変更作業が不要となります。</p>
 
 
 <p>[LBに関する検討]<br>　A社が導入するLBは、HTTPリクエストの振分け機能、死活監視機能、セッション維持機能、TLSアクセラレーション機能、HTTPヘッダの編集（追加、変更、削除）機能をもっている。<br>　HTTPリクエストの振分け機能について、Uさんは、HTTPリクエストをWebサーバに（<strong>ア</strong>）に振り分けるラウンドロビン方式を採用することにした。<br>　死活監視機能について、Uさんは、WebAPの稼働状況を監視するために、レイヤ7方式を利用することにした。死活監視に用いるメッセージの設定を表1に示す。</p>
