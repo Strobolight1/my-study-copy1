@@ -359,7 +359,6 @@
 
 <!-- merged from: h29_p1_q1_no3.html -->
 <hr class="merge-sep">
-<div class="wp-block-image is-style-vk-image-border"><figure class="aligncenter size-large"><img data-recalc-dims="1" fetchpriority="high" decoding="async" src="../images/pm1/h29_pm1_q1_no4.png" alt="" class="wp-image-3516" /></figure></div>
 
 
 
@@ -392,7 +391,7 @@
 
 <h4 class="is-style-vk-heading-double_bottomborder_black wp-block-heading" id="vk-htags-896ce6ca-b117-49bf-9598-35e95f0f2aa4">（Ⅳ）について、表2のアクセスリストを設定すべきインタフェースを、図2中の①〜⑥の記号で答えよ。ここで、アクセスリストはインタフェースの入力方向に設定するものとする。：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">②、③、④、⑤</span></div></h4>
 
-
+<div class="wp-block-image is-style-vk-image-border"><figure class="aligncenter size-large"><img data-recalc-dims="1" decoding="async" src="../images/pm1/h29_pm1_q1_no4.png" alt="" class="wp-image-3516" /></figure></div>
 
 <p>　VLAN間の不正通信制限として、項番1で宛先IPアドレス「172.16.0.0/16（内部LAN）」への通信が禁止されていることと、インタフェースの入力方向に設定することを考慮して、各インタフェースの通信を確認していきます。<br>　①に該当するFWから内部LANへの通信ですが、問題文に「H社は、内部LANからインターネットへのWebアクセスを、DMZのプロキシサーバを経由して行っている」とあるように、インターネット向けの通信にプロキシサーバを利用しており、戻り方向の通信が①の入力方向に該当するため、このアクセスリストを適用すべきではありません。<br>　②〜④に該当する各社のサーバ機器からの通信は、SSL-VPN装置（VLAN201）経由への通信のみ必要で、内部LANを宛先とする通信は不要です。したがって、アクセスリストを適用する必要があります。<br>　⑤に該当する開発LANからの通信は、プロキシサーバ及びSSL-VPN装置を宛先とするFW（VLAN200）経由への通信のみ必要で、内部LANを宛先とする通信は不要です。したがって、アクセスリストを適用する必要があります。<br>　⑥に該当するSSL-VPN装置からの通信は、各社のサーバ機器を宛先とするためアクセスリストを適用すべきではありません。</p>
 
