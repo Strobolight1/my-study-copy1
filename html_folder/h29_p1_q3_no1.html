@@ -233,7 +233,7 @@
 
 <p>I主任：通信の方向それぞれについて経路設計をする必要があります。まずは、社内からL社クラウドサービスの方向は、L社クラウドサービスを利用するPCからのパケットは全てL3SWに届くので、L3SWがパケットの転送先として、VPNa1とVPNb1のどちらを選択するか、転送先を決められるようにすればよいです。</p>
 
-<p>Oさん：VPNa1とVPNb1が、BGPで受けた経路情報をOSPFに再配布する際に、異なるコストを付与すると転送先を選択できそうですね。VPNb1側のコストをVPNa1側と比べて【A】します。</p>
+<p>Oさん：VPNa1とVPNb1が、BGPで受けた経路情報をOSPFに再配布する際に、異なるコストを付与すると転送先を選択できそうですね。VPNb1側のコストをVPNa1側と比べて（<strong>A：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">大きく</span></div></strong>）します。</p>
 
 <p>I主任：次に、L社クラウドサービスから社内の方向はどうでしょう。L社クラウドサービスは、どのようなBGPのパスアトリビュートをサポートしていますか。</p>
 
