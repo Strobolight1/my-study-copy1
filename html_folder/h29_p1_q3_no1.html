@@ -223,11 +223,11 @@
 
 
 
-<p>　BGPはルーティングプロトコルの一つであり、特定のルーティングポリシで管理されたルータの集まりを示す（<strong>ウ：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">AS</span></div></strong>）の間で、経路情報の交換を行うために開発されたプロトコルである。<br>　BGP接続を行う2台のルータ間ではトランスポートプロトコルの一つである（<strong>エ：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">TCP</span></div></strong>）のポート179番を使用し、経路情報の交換を行う。このコネクションのことをBGPピアと呼ぶ。<br>　（<strong>ウ：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">AS</span></div></strong>）を識別する番号として、VPNa1とVPNb1では65505を使用し、VPNa2とVPNb2ではL社クラウドサービスが割当てを受けている64496を使用する。<br>　VPNa1とVPNa2間及びVPNb1とVPNb2ではeBGPピアを設定し、VPNa1とVPNb1間ではiBGPピアを設定する。<br>　VPNa2とVPNb2は、それぞれVPNa1とVPNb2に対し、L社クラウドサービス内のサーバセグメントの経路だけBGPで経路広告する。<br>　K社NWのVPNセグメントと接続するVPNa1、VPNb1及びL3SWの各インタフェースではOSPFのエリア0を構成し経路情報の交換を行う。さらに、IP in IPで作成されたトンネルインタフェースでは、OSPFのエリア0を構成するが、<strong><span style="text-decoration: underline;">④経路情報の交換を行う必要がないのでパッシブインタフェースとする</span></strong>。<br>　VPNa1とVPNb1では、OSPFとBGPの間で経路情報の再配布を行う。<br><br>　Oさんは、VPNa1側をアクティブ、VPNb1側をスタンバイとする構成について、J主任に相談した。次は、そのときのOさんとJ主任の会話である。</p>
+<p>　BGPはルーティングプロトコルの一つであり、特定のルーティングポリシで管理されたルータの集まりを示す（<strong>ウ：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">AS</span></div></strong>）の間で、経路情報の交換を行うために開発されたプロトコルである。<br>　BGP接続を行う2台のルータ間ではトランスポートプロトコルの一つである（<strong>エ：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">TCP</span></div></strong>）のポート179番を使用し、経路情報の交換を行う。このコネクションのことをBGPピアと呼ぶ。<br>　（<strong>ウ：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">AS</span></div></strong>）を識別する番号として、VPNa1とVPNb1では65505を使用し、VPNa2とVPNb2ではL社クラウドサービスが割当てを受けている64496を使用する。<br>　VPNa1とVPNa2間及びVPNb1とVPNb2ではeBGPピアを設定し、VPNa1とVPNb1間ではiBGPピアを設定する。<br>　VPNa2とVPNb2は、それぞれVPNa1とVPNb2に対し、L社クラウドサービス内のサーバセグメントの経路だけBGPで経路広告する。<br>　K社NWのVPNセグメントと接続するVPNa1、VPNb1及びL3SWの各インタフェースではOSPFのエリア0を構成し経路情報の交換を行う。さらに、IP in IPで作成されたトンネルインタフェースでは、OSPFのエリア0を構成するが、<strong><span style="text-decoration: underline;">④経路情報の交換を行う必要がないのでパッシブインタフェースとする</span></strong>。<br>　VPNa1とVPNb1では、OSPFとBGPの間で経路情報の再配布を行う。<br><br>Oさんは、VPNa1側をアクティブ、VPNb1側をスタンバイとする構成について、J主任に相談した。次は、そのときのOさんとJ主任の会話である。</p>
 
 
 
-<p>Oさん：VPNの経路設計で、VPNa1側をアクティブ、VPNb1側をスタンバイとしたいのですが、どのように設計したらよいでしょうか。</p>
+<p><br><br>Oさん：VPNの経路設計で、VPNa1側をアクティブ、VPNb1側をスタンバイとしたいのですが、どのように設計したらよいでしょうか。</p>
 
 <p>I主任：通信の方向それぞれについて経路設計をする必要があります。まずは、社内からL社クラウドサービスの方向は、L社クラウドサービスを利用するPCからのパケットは全てL3SWに届くので、L3SWがパケットの転送先として、VPNa1とVPNb1のどちらを選択するか、転送先を決められるようにすればよいです。</p>
 
@@ -239,13 +239,13 @@
 
 <p>I主任：そうですね。そういえば、一点注意が必要です。経路情報の再配布を行うときには、経路のループを防止しなければいけません。</p>
 
-<p>Oさん：分かりました。⑤経路のループを防止する経路制御を行います。</p>
+<p>分かりました。<strong><span style="text-decoration: underline;">⑤経路のループを防止する経路制御</span></strong>を行います。</p>
 </div>
 
 
 
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:88%">
-<p>VPNの経路設計で、VPNa1側をアクティブ、VPNb1側をスタンバイとしたいのですが、どのように設計したらよいでしょうか。<br>通信の方向それぞれについて経路設計をする必要があります。まずは、社内からL社クラウドサービスの方向は、L社クラウドサービスを利用するPCからのパケットは全てL3SWに届くので、L3SWがパケットの転送先として、VPNa1とVPNb1のどちらを選択するか、転送先を決められるようにすればよいです。<br>VPNa1とVPNb1が、BGPで受けた経路情報をOSPFに再配布する際に、異なるコストを付与すると転送先を選択できそうですね。VPNb1側のコストをVPNa1側と比べて（<strong>A：<button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">大きく</span></div></strong>）します。<br>次に、L社クラウドサービスから社内の方向はどうでしょう。L社クラウドサービスは、どのようなBGPのパスアトリビュートをサポートしていますか。<br>MEDとAS_PATHを利用できます。今回はAS_PATHを使おうと考えています。AS_PATHでは、AS_PATH長が短い方が選択されます。<br>そうですね。そういえば、一点注意が必要です。経路情報の再配布を行うときには、経路のループを防止しなければいけません。<br>分かりました。<strong><span style="text-decoration: underline;">⑤経路のループを防止する経路制御</span></strong>を行います。</p>
+
 </div>
 </div>
 
