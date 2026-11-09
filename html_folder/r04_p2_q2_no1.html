@@ -501,10 +501,10 @@
 
 
 <div class="wp-block-image is-style-vk-image-border">
-<figure class="aligncenter size-full"><a href="../images/pm2/r04_pm2_q2_no10.png"><img data-recalc-dims="1" fetchpriority="high" decoding="async" src="../images/pm2/r04_pm2_q2_no10.png" alt="" class="wp-image-5584" /></a></figure></div>
+<figure class="aligncenter size-full"><a href="../images/pm2/r04_pm2_q2_no9.png"><img data-recalc-dims="1" fetchpriority="high" decoding="async" src="../images/pm2/r04_pm2_q2_no9.png" alt="" class="wp-image-5584" /></a></figure></div>
 
 <div class="wp-block-image is-style-vk-image-border">
-<figure class="aligncenter size-full"><a href="../images/pm2/r04_pm2_q2_no11.png"><img data-recalc-dims="1" decoding="async" src="../images/pm2/r04_pm2_q2_no11.png" alt="" class="wp-image-5585" /></a></figure></div>
+<figure class="aligncenter size-full"><a href="../images/pm2/r04_pm2_q2_no10.png"><img data-recalc-dims="1" decoding="async" src="../images/pm2/r04_pm2_q2_no10.png" alt="" class="wp-image-5585" /></a></figure></div>
 
 
 <p> Rさんは表6のWebAPの移行手順をO課長に報告した。次は、WebAPの移行手順に関する、O課長とRさんの会話である。<br><br>O課長：今回の移行はAPサーバとWebAPコンテナを並行稼働させてDNSレコードの書換えによって切り替えるのだね。<br><br>Rさん：そうです。同じ動作をするので、DNSレコードの書換えが反映されるまでの並行稼働期間中、APサーバとWebAPコンテナ、どちらにアクセスが行われても問題ありません。<br><br>O課長：分かりました。並行稼働期間を短くするためにDNS切替えの事前準備は何があるかな。<br><br>Rさん：はい。<strong><span style="text-decoration: underline;">⑪あらかじめ、DNSのTTLを短くしておく方が良いですね</span></strong>。<br><br>O課長：そうですね。移行手順に記載をお願いします。<br><br>Rさん：分かりました。<br><br>O課長：動作確認はどのようなことを行うか詳しく教えてください。<br><br>Rさん：はい。WebAPコンテナ2台で構成する場合は、<strong><span style="text-decoration: underline;">⑫次の3パターンそれぞれでAPの動作確認を行います</span></strong>。一つ目は、全てのWebAPコンテナが正常に動作している場合、二つ目は、2台のうち1台目だけWebAPコンテナが停止している場合、最後は、2台目だけWebAPコンテナが停止している場合です。また、障害検知の結果から、正しく監視登録されたことの確認も行います。<br><br>O課長：分かりました。良さそうですね。<br><br> APを、仮想化技術を利用したコンテナサーバやホストサーバに移行することによって期待どおりにサーバの台数を減らせる目処が立ち、システム開発部では仮想化技術の導入プロジェクトを開始した。</p>
