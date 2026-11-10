@@ -276,7 +276,7 @@
 
 
 <div class="wp-block-image is-style-vk-image-border">
-<figure class="aligncenter size-full"><a href="../images/pm2/r03_pm2_q2_no7.png"><img data-recalc-dims="1" loading="lazy" decoding="async" src="../images/pm2/r03_pm2_q2_no7.png" alt="" class="wp-image-5159" /></a></figure></div>
+<figure class="aligncenter size-full"><a href="../images/pm2/r03_pm2_q2_no9.png"><img data-recalc-dims="1" loading="lazy" decoding="async" src="../images/pm2/r03_pm2_q2_no9.png" alt="" class="wp-image-5159" /></a></figure></div>
 
 
 <p>「<em><strong><span style="text-decoration: underline;">④iBGPのピアリングでは、経路情報を広告する際に、BGPパスアトリビュートの一つであるNEXT_HOPのIPアドレスを、自身のIPアドレスに書き換える設定を行う</span></strong>。</em>」<br>　FW11のルーティングテーブルでiBGP経由で受信する経路としては、図2の構成図からインターネット宛てに経由するルータ10Z、ルータ11Z向けのネットワークであることが想像できるかと思います。<br>　具体的にはそれぞれα.β.γ.1/30、α.β.γ.5/30ですが、ルーティングテーブルに登録されるネットワークアドレスとして、それぞれα.β.γ.0/30、α.β.γ.4/30の情報が必要になります。</p>
@@ -296,13 +296,15 @@
 
 
 <p>「<em>AS_PATHの長さが最も（<strong>ア</strong>）経路情報を選択する。</em>」<br>  AS_PAThは「<em>経路情報がどのASを経由してきたのかを示すAS番号の並び</em>」ですので、その長さは経路の長さ（遠さ）を表すことになります。<br>  したがって、AS_PATHの長さが短い経路情報を選択します。<br><br>「<em>MEDの値が最も（イ）経路情報を選択する。</em>」<br>  MEDは「<em>eBGPピアに対して通知する、自身のAS内に存在する宛先ネットワークアドレスの優先度</em>」「<em>メトリックとも呼ばれる</em>」とあるので、値が小さいほうを優先します。</p>
-
+<div class="wp-block-image is-style-vk-image-border">
+<figure class="aligncenter size-full"><a href="../images/pm2/r03_pm2_q2_no5.png"><img data-recalc-dims="1" loading="lazy" decoding="async" src="../images/pm2/r03_pm2_q2_no5.png" alt="" class="wp-image-5159" /></a></figure></div>
 
 
 <h2 class="is-style-vk-heading-double_black has-medium-font-size wp-block-heading">ウ：<strong><button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">α.β.γ.8</span></div></strong>、エ：<strong><button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">α.β.γ.9</span></div></strong></h2>
 
 
-
+<div class="wp-block-image is-style-vk-image-border">
+<figure class="aligncenter size-full"><a href="../images/pm2/r03_pm2_q2_no6.png"><img data-recalc-dims="1" loading="lazy" decoding="async" src="../images/pm2/r03_pm2_q2_no6.png" alt="" class="wp-image-5159" /></a></figure></div>
 <p>  表4（FW10のBGPテーブル（抜粋））で、宛先ネットワークアドレス「0.0.0.0」（デフォルトルート）に対して、LOCAL_PREFの違う二つのエントリがあり、それぞれのNEXT_HOPが問われています。<br>  ここでは専用線の経路制御に関する会話の流れであり、直前に「<em>ルータ10Zとルータ11Zはデフォルトルートの経路情報の広告を行います。</em>」とあるので、FW10のBGPテーブルで、ルータ10Z→ルータ10→FW10と、ルータ11Z→ルータ11→FW10で受信したデフォルトルートの経路情報を表していることが分かります。<br>  どちらの専用線を優先させるかについては、前半に「<em>平常時はルータ10側の専用線を利用し、障害などでルータ10側が利用できない場合は、ルータ11側を利用するように経路制御を行う。</em>」とあるように、ルータ10経由の経路を優先させます。<br>  そして、LOCAL_PREFは「<em>値が最も大きい経路情報を選択する</em>」ので、「200」がルータ10、「100」がルータ11となります。<br>  ここでルータ10、ルータ11を表すNEXT_HOPのIPアドレスは何になるでしょう。<br>  それは、「<em><strong><span style="text-decoration: underline;">③ルータ10とルータ11はループバックインタフェースに設定したIPアドレスを利用し、FW10はeに設定したIPアドレスを利用して、互いにiBGPのピアリングを行う</span></strong>。<strong><span style="text-decoration: underline;">④iBGPのピアリングでは、経路情報を広告する際に、BGPパスアトリビュートの一つであるNEXT_HOPのIPアドレスを、自身のIPアドレスに書き換える設定を行う</span></strong>。</em>」とあるように、ループバックインタフェースに設定したIPアドレスです。<br>  図2から、ルータ10は「α.β.γ.8」、ルータ11は「α.β.γ.9」となります。</p>
 
 
@@ -310,7 +312,8 @@
 <h2 class="is-style-vk-heading-double_black has-medium-font-size wp-block-heading">オ：<strong><button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">α.β.γ.17</span></div></strong>、カ：<strong><button onclick="toggleAnswer(this)">解答を表示</button><div class="answer" style="display:none;"><span data-color="#f78da7" style="background: linear-gradient(transparent 60%,rgba(247, 141, 167, 0.7) 0);" class="vk_highlighter">α.β.γ.18</span></div></strong></h2>
 
 
-
+<div class="wp-block-image is-style-vk-image-border">
+<figure class="aligncenter size-full"><a href="../images/pm2/r03_pm2_q2_no7.png"><img data-recalc-dims="1" loading="lazy" decoding="async" src="../images/pm2/r03_pm2_q2_no7.png" alt="" class="wp-image-5159" /></a></figure></div>
 <p>  表5（FW10のルーティングテーブル（抜粋））は、BGPテーブル（表4）の他に、OSPFや静的経路情報などから最適な経路情報を選択して作成されます。<br>  1行目の宛先ネットワークアドレス「0.0.0.0/0」、ネクストホップ「α.β.γ.8」は、BGPテーブルの1行目が選択されたものです。<br>  では、2行目「α.β.γ.8」、3行目「α.β.γ.9」のルータ10とルータ11のループバックアドレスを宛先とするネクストホップは何の情報から選択されたものでしょうか。<br>  それは、「<em>a〜eの各物理インタフェース及びループバックインタフェースでは、OSPFエリアを構成する。</em>」とあるようにOSPFで学習した経路情報であり、その後の説明であるようにiBGPピアリングを確立するためにOSPFを使用しています。<br>  そして、ループバックインタフェースはルータ内部のものであり、外部から見える物理インタフェース経由で認識できるようにするため、ネクストホップはルータの物理インタフェースになります。<br>  したがって、ルータ10のループバックインタフェース「α.β.γ.8」宛てのネクストホップは「α.β.γ.17」、ルータ11のループバックインタフェース「α.β.γ.9」宛てのネクストホップは「α.β.γ.18」になります。</p>
 
 
