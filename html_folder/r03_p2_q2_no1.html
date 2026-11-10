@@ -257,8 +257,8 @@
 
 
 <div class="wp-block-image is-style-vk-image-border">
-<figure class="aligncenter size-full"><a href="../images/pm2/r03_pm2_q2_no6.png"><img data-recalc-dims="1" loading="lazy" decoding="async" src="../images/pm2/r03_pm2_q2_no6.png" alt="" class="wp-image-5151" /></a></figure></div>
-
+<figure class="aligncenter size-full"><a href="../images/pm2/r03_pm2_q2_no6.png"><img data-recalc-dims="1" loading="lazy" decoding="async" src="../images/pm2/r03_pm2_q2_no6.png" alt="" class="wp-image-5151" /></a></figure>
+<figure class="aligncenter size-full"><a href="../images/pm2/r03_pm2_q2_no7.png"><img data-recalc-dims="1" loading="lazy" decoding="async" src="../images/pm2/r03_pm2_q2_no7.png" alt="" class="wp-image-5151" /></a></figure></div>
 
 <p>（Cさん）分かりました。リンクダウンしないにもかかわらず、通信ができなくなるような専用線の障害時は、どのような動作になりますか。<br>（担当者）BGPでは、（<strong>キ</strong>）メッセージを定期的に送信します。専用線の障害時には、ルータが（<strong>キ</strong>）メッセージを受信しなくなることによって、ピアリングが切断され、AS内の各機器の経路情報が更新されます。<br>（Cさん）分かりました。<br>（担当者）ところで、<strong><span style="text-decoration: underline;">⑥BGPの標準仕様ではトラフィックを分散する経路制御はできません</span></strong>。BGPマルチパスと呼ばれる技術を使うことで、平常時からルータ10側、ルータ11側両方の専用線を使って、トラフィックを分散する経路制御ができますがいかがですか。教えていただいた、今回利用を検討されている機器はどれもBGPマルチパスをサポートしています。BGPマルチパスを有効にすると、BGPテーブル内のLOCAL_PREFやAS_PATH、MEDの値は同じで、NEXT_HOPだけが異なる複数の経路情報を、同時にルーティングテーブルに反映します。その結果、ECMP（Equal-Cost Multi-Path）によってトラフィックを分散することができます。<br>（Cさん）いいですね。では、BGPマルチパスを利用したいと思います。<br>（担当者）承知しました。各機器の設定例を後ほどお渡ししますので参考にしてください。<br>（Cさん）ありがとうございます。</p>
 
